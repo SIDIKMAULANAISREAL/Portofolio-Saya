@@ -1,0 +1,889 @@
+/* Reset margin, padding, dan box-sizing untuk semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    /* Menghilangkan garis outline saat elemen di klik */
+    scroll-behavior: smooth;
+    /* Menambahkan efek scroll yang halus */
+    font-family: "Poppins", sans-serif;
+    /* Menggunakan font Poppins */
+}
+
+/* Deklarasi variabel warna yang dapat digunakan di seluruh kode */
+:root {
+    --bg-color: #222;
+    /* Warna latar belakang utama */
+    --second-bg-color: #151515;
+    /* Warna latar belakang kedua */
+    --text-color: white;
+    /* Warna teks */
+    --main-color: white;
+    /* Warna utama */
+    --main-color2: aqua;
+    /* Warna kedua untuk elemen interaktif */
+    --main-color3: #888;
+    /* Warna ketiga, biasanya untuk elemen sekunder */
+}
+
+/* Pengaturan untuk elemen HTML */
+html {
+    font-size: 62.5%;
+    /* Menetapkan basis ukuran font agar 1rem = 10px */
+    overflow-x: hidden;
+    /* Menghilangkan scroll horizontal */
+}
+
+/* Pengaturan dasar untuk elemen body */
+body {
+    background-color: var(--text-color);
+    /* backgroud berwarna putih */
+    color: var(--second-bg-color);
+    /* Warna teks hitam */
+    transition: 15s;
+    /* Menambahkan transisi lembut saat perubahan */
+}
+
+/* Mode gelap dan terang untuk body */
+.dark {
+    background-color: var(--bg-color);
+    /* Latar belakang putih untuk mode dark*/
+    color: var(--text-color);
+    /* Teks menjadi putih */
+    transition: 15s;
+    /* Transisi lembut */
+}
+
+/* Pengaturan untuk header */
+.header {
+    position: fixed;
+    /* Header tetap di bagian atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Lebar penuh */
+    padding: 3rem 9%;
+    /* Jarak dalam (padding) di sekitar elemen header */
+    background: black;
+    /* Latar belakang hitam */
+    backdrop-filter: blur(10px);
+    /* Efek blur di belakang header */
+    display: flex;
+    /* Mengatur flexbox untuk tata letak */
+    justify-content: space-between;
+    /* Menjaga konten tersebar merata */
+    align-items: center;
+    /* Vertikal rata tengah */
+    z-index: 100;
+    /* Z-index agar header tetap di depan */
+}
+
+/* Pengaturan untuk logo */
+.logo {
+    font-size: 3rem;
+    /* Ukuran font besar */
+    color: var(--main-color2);
+    /* Warna logo menggunakan variabel */
+    font-weight: 800;
+    /* Tebal font */
+    cursor: pointer;
+    /* Menampilkan kursor pointer */
+    transition: 0.3s ease-in-out;
+    /* Efek transisi saat interaksi */
+}
+
+/* Efek hover untuk logo */
+.logo:hover {
+    transform: scale(1.1);
+    /* Memperbesar sedikit saat di hover */
+}
+
+/* Pengaturan untuk link navbar */
+.navbar a {
+    font-size: 1.8rem;
+    /* Ukuran font */
+    color: white;
+    /* Warna teks putih */
+    margin-left: 4rem;
+    /* Jarak antara link */
+    font-weight: 500;
+    /* Ketebalan teks medium */
+    transition: 0.3s ease-in-out;
+    /* Efek transisi */
+    border-bottom: 3px solid transparent;
+    /* Garis bawah default transparan */
+}
+
+/* Efek hover dan link aktif pada navbar */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    /* Ubah warna teks saat hover atau aktif */
+    border-bottom: 3px solid var(--main-color2);
+    /* Garis bawah berwarna saat aktif atau di hover */
+}
+
+#menu-icon {
+    font-size: 3.6 rem;
+    color: var(--main-color2);
+    display: none;
+}
+
+/* Pengaturan untuk elemen #info */
+#info {
+    display: none;
+    /* Info disembunyikan awalnya */
+    font-size: 16px;
+    /* Ukuran font info */
+    font-weight: bold;
+    /* Teks bold untuk penekanan */
+    margin-top: 20px;
+    /* Jarak atas */
+    color: red;
+    /* Warna merah untuk pesan peringatan */
+    text-align: center;
+    /* Teks di tengah */
+    animation: jedagJedug 0.5s infinite;
+    /* Animasi untuk pesan */
+}
+
+/* Definisi animasi jedagJedug */
+@keyframes jedagJedug {
+    0% {
+        font-size: 16px;
+        /* Ukuran font awal */
+    }
+
+    50% {
+        font-size: 18px;
+        /* Ukuran font saat animasi mencapai setengah */
+    }
+
+    100% {
+        font-size: 16px;
+        /* Kembali ke ukuran font awal */
+    }
+}
+
+/* Pengaturan untuk ikon menu */
+#menu-icon {
+    font-size: 3.6rem;
+    /* Ukuran ikon menu */
+    color: var(--main-color);
+    /* Warna ikon menggunakan variabel */
+    display: none;
+    /* Tidak ditampilkan di awal */
+}
+
+/* Menyembunyikan form pencarian awalnya */
+.search-form {
+    display: none;
+    /* Form pencarian tidak ditampilkan awalnya */
+    position: absolute;
+    /* Posisi absolut untuk penempatan */
+    top: 115%;
+    /* Menempatkan di bawah navbar */
+    right: 7%;
+    /* Menempatkan di sebelah kanan */
+    background-color: rgb(145, 145, 149);
+    /* Warna latar belakang input */
+    width: 50rem;
+    /* Lebar form pencarian */
+    display: flex;
+    /* Menggunakan flexbox untuk penataan elemen di dalamnya */
+    align-items: center;
+    /* Rata tengah secara vertikal */
+    border-radius: 4px;
+    /* Menambahkan sudut melengkung */
+}
+
+/* Gaya untuk input dalam form pencarian */
+.search-form input {
+    height: 100%;
+    /* Tinggi 100% dari container */
+    width: 100%;
+    /* Lebar 100% dari container */
+    font-size: 1.6rem;
+    /* Ukuran font input */
+    color: var(--second-bg-color);
+    /* Warna teks dalam input */
+    padding: 1rem;
+    /* Padding dalam input */
+    text-transform: none;
+    /* Tidak mengubah teks menjadi kapital */
+    border: none;
+    /* Menghilangkan border */
+    border-radius: 4px;
+    /* Membuat sudut melengkung */
+    box-shadow: 0px 4px 10px var(--main-color2);
+    /* Menambahkan bayangan */
+}
+
+/* Menyelaraskan search input dengan navbar ketika tampil */
+.navbar a {
+    display: inline-block;
+    /* Mengatur link navbar menjadi inline-block */
+    margin: 0 10px;
+    /* Jarak antar link */
+    cursor: pointer;
+    /* Menampilkan kursor pointer saat hover */
+}
+
+/* Menampilkan form pencarian saat aktif */
+.navbar .search-form.active {
+    display: inline-block;
+    /* Menampilkan form pencarian saat aktif */
+}
+
+/* Menyelaraskan search input dengan navbar ketika tampil (duplikasi) */
+.navbar a {
+    display: inline-block;
+    /* Mengatur link navbar menjadi inline-block */
+    margin: 0 10px;
+    /* Jarak antar link */
+    cursor: pointer;
+    /* Menampilkan kursor pointer saat hover */
+}
+
+/* Menampilkan form pencarian saat aktif (duplikasi) */
+.navbar .search-form.active {
+    display: inline-block;
+    /* Menampilkan form pencarian saat aktif */
+}
+
+/* Pengaturan untuk section */
+section {
+    min-height: 100vh;
+    /* Tinggi minimum 100% dari tinggi viewport */
+    padding: 10rem 9% 10rem;
+    /* Padding di atas, samping kiri/kanan, dan bawah */
+}
+
+/* Pengaturan untuk elemen dengan kelas .home */
+.home {
+    display: flex;
+    /* Menggunakan flexbox untuk tata letak */
+    justify-content: center;
+    /* Konten di tengah secara horizontal */
+    align-items: center;
+    /* Konten di tengah secara vertikal */
+    flex-direction: column;
+    /* Tata letak kolom */
+    gap: 1rem;
+    /* Jarak antar elemen */
+}
+
+/* Pengaturan untuk konten dalam .home */
+.home-content {
+    display: flex;
+    /* Menggunakan flexbox */
+    align-items: center;
+    /* Vertikal rata tengah */
+    justify-content: center;
+    /* Horizontal rata tengah */
+    flex-direction: column;
+    /* Tata letak kolom */
+    text-align: center;
+    /* Teks rata tengah */
+    margin-top: 3rem;
+    /* Jarak atas */
+}
+
+span {
+    color: var(--main-color2);
+    /* Mengatur warna teks untuk semua elemen span menggunakan variabel --main-color2 */
+}
+
+.logo.span {
+    color: var(--text-color);
+    /* Mengatur warna teks untuk elemen span yang memiliki kelas logo menggunakan variabel --text-color */
+}
+
+
+/* Pengaturan untuk h3 dalam .home-content */
+.home-content h3 {
+    margin-bottom: 2rem;
+    /* Jarak bawah */
+    margin-top: 1rem;
+    /* Jarak atas */
+    font-size: 3.5rem;
+    /* Ukuran font */
+}
+
+/* Pengaturan untuk h1 dalam .home-content */
+.home-content h1 {
+    font-size: 7rem;
+    /* Ukuran font besar */
+    font-weight: 700;
+    /* Ketebalan font */
+    margin-top: 1.5rem;
+    /* Jarak atas */
+    line-height: 1;
+    /* Jarak antar baris */
+}
+
+/* Pengaturan untuk gambar dalam .home */
+.home-img {
+    border-radius: 50%;
+    /* Gambar menjadi lingkaran */
+}
+
+/* Pengaturan untuk gambar di dalam .home-img */
+.home-img img {
+    position: relative;
+    /* Posisi relatif untuk manipulasi */
+    top: 3rem;
+    /* Jarak dari atas */
+    width: 22vw;
+    /* Lebar gambar sesuai lebar viewport */
+    border-radius: 50%;
+    /* Membuat gambar berbentuk lingkaran */
+    box-shadow: 0 0 25px var(--main-color);
+    /* Bayangan luar gambar */
+    cursor: pointer;
+    /* Menampilkan kursor pointer */
+    transition: 0.4s ease;
+    /* Transisi lembut */
+}
+
+/* Efek hover pada gambar */
+.home-img img:hover {
+    box-shadow: 0 0 50px var(--main-color),
+        /* Efek bayangan lebih besar saat hover */
+        0 0 100px var(--main-color);
+    /* Efek bayangan kedua */
+}
+
+/* Pengaturan untuk paragraf dalam .home-content */
+.home-content p {
+    font-size: 1.5rem;
+    /* Ukuran font */
+    font-weight: 500;
+    /* Ketebalan font */
+    max-width: 1000px;
+    /* Lebar maksimum paragraf */
+}
+
+/* Pengaturan untuk tombol (button) */
+.btn {
+    display: inline-block;
+    /* Elemen tombol di-block */
+    padding: 1rem 2.8rem;
+    /* Padding dalam tombol */
+    background: var(--main-color2);
+    /* Warna latar belakang tombol */
+    border-radius: 4rem;
+    /* Sudut melengkung */
+    font-size: 1.6rem;
+    /* Ukuran font tombol */
+    color: var(--main-color);
+    /* Warna teks dalam tombol */
+    border: 2px solid transparent;
+    /* Garis batas transparan */
+    letter-spacing: 0.1rem;
+    /* Jarak antar huruf */
+    font-weight: 600;
+    /* Ketebalan font */
+    transition: 0.3s ease-in-out;
+    /* Efek transisi */
+    cursor: pointer;
+    /* Kursor berubah saat hover */
+}
+
+/* Efek hover pada tombol */
+.btn:hover {
+    transform: scale(1.05);
+    /* Tombol sedikit membesar saat hover */
+    box-shadow: 0.0.25px var(--main-color);
+    /* Bayangan pada tombol */
+}
+
+/* Pengaturan untuk animasi teks */
+.text-animation {
+    font-size: 34px;
+    /* Ukuran font animasi teks */
+    font-weight: 600;
+    /* Ketebalan font */
+    min-width: 280px;
+    /* Lebar minimum elemen teks */
+}
+
+/* Pengaturan untuk span di dalam .text-animation */
+.text-animation span {
+    position: relative;
+    /* Posisi relatif untuk animasi */
+}
+
+/* Sebelum span, tampilkan teks animasi */
+.text-animation span::before {
+    content: 'Welcome To Website';
+    /* Teks default */
+    color: var(--main-color2);
+    /* Warna teks animasi */
+    animation: words 20s infinite;
+    /* Animasi perubahan teks */
+}
+
+/* Setelah span, tambahkan kursor */
+.text-animation span::after {
+    content: "";
+    /* Konten kosong untuk kursor */
+    background-color: var(--bg-color);
+    /* Warna latar belakang kursor */
+    position: absolute;
+    /* Posisi absolut */
+    width: calc(100% + 8px);
+    /* Lebar kursor */
+    height: 100%;
+    /* Tinggi kursor */
+    border-left: 3px var(--bg-color);
+    /* Garis batas kiri kursor */
+    right: -8px;
+    /* Posisi kursor di sebelah kanan */
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    /* Animasi kursor dan mengetik */
+}
+
+/* Animasi kursor berkedip */
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color2);
+        /* Animasi perubahan batas kiri */
+    }
+}
+
+/* Animasi perubahan kata pada teks */
+@keyframes words {
+
+    0%,
+    20% {
+        content: 'Welcome To';
+        /* Teks pertama */
+    }
+
+    21%,
+    40% {
+        content: 'Portofolio';
+        /* Teks kedua */
+    }
+
+    41%,
+    60% {
+        content: 'Hello My Name Is';
+        /* Teks ketiga */
+    }
+
+    61%,
+    80% {
+        content: 'Sidik Maulana';
+        /* Teks keempat */
+    }
+
+    81%,
+    100% {
+        content: 'I am a Sofware Engineering Student';
+        /* Teks kelima */
+    }
+}
+
+/* Animasi efek mengetik */
+@keyframes typing {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+        /* Teks hilang */
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+        /* Teks muncul */
+    }
+}
+
+/* Akhir dari animasi teks */
+
+
+/* Gaya untuk section about */
+.about {
+    padding: 5rem 9%;
+    /* Padding untuk bagian atas dan bawah */
+    text-align: center;
+    /* Teks rata tengah */
+}
+
+/* Gaya untuk judul about */
+.about-title {
+    font-size: 3rem;
+    /* Ukuran font judul */
+    margin-bottom: 2rem;
+    /* Jarak bawah */
+    transition: color 0.3s ease;
+    /* Transisi warna */
+}
+
+/* Efek hover untuk judul about */
+.about-title:hover {
+    color: var(--main-color2);
+    /* Ubah warna saat di-hover */
+}
+
+/* Gaya untuk konten tentang */
+.about-content {
+    font-size: 1.5rem;
+    /* Ukuran font paragraf */
+    line-height: 1.6;
+    /* Jarak antar baris */
+    max-width: 800px;
+    /* Lebar maksimum untuk konten */
+    margin: 0 auto;
+    /* Pusatkan konten */
+}
+
+/* Gaya untuk gambar about */
+.about-image {
+    max-width: 100%;
+    /* Responsif untuk gambar */
+    height: auto;
+    /* Mempertahankan rasio aspek */
+    margin: 2rem 0;
+    /* Jarak atas dan bawah untuk gambar */
+    border-radius: 30px;
+}
+
+/* Gaya untuk statistik about */
+.about-stats {
+    display: flex;
+    /* Gunakan flexbox untuk tata letak statistik */
+    justify-content: center;
+    /* Pusatkan item statistik */
+    margin-top: 2rem;
+    /* Jarak atas untuk statistik */
+}
+
+/* Gaya untuk setiap statistik */
+.stat {
+    margin: 0 2rem;
+    /* Jarak horizontal antara statistik */
+    text-align: center;
+    /* Rata tengah untuk teks statistik */
+}
+
+/* Gaya untuk judul statistik */
+.stat h2 {
+    font-size: 2rem;
+    /* Ukuran font judul statistik */
+    margin: 0;
+    /* Hapus margin atas dan bawah */
+    color: var(--main-color2);
+    /* Warna untuk judul statistik */
+}
+
+ /* untuk gaya tulisan nya */
+.stat h2:hover {
+    color: red;
+
+}
+
+/* Gaya untuk paragraf statistik */
+.stat p {
+    font-size: 1.2rem;
+    /* Ukuran font untuk paragraf statistik */
+    margin-top: 0.5rem;
+    /* Jarak atas untuk paragraf statistik */
+}
+
+
+
+/* Pengaturan untuk section services */
+.services {
+    padding: 5rem 9%;
+    /* Padding untuk bagian atas dan bawah */
+    text-align: center;
+    /* Teks rata tengah */
+}
+
+/* Gaya untuk judul layanan */
+.services-title {
+    font-size: 3rem;
+    /* Ukuran font judul */
+    margin-bottom: 2rem;
+    /* Jarak bawah */
+    position: relative;
+    /* Posisi relatif untuk efek */
+    display: inline-block;
+    /* Agar ukuran elemen sesuai dengan teks */
+    transition: color 0.3s ease;
+    /* Transisi warna */
+}
+
+/* Efek hover untuk judul layanan */
+.services-title:hover {
+    color: var(--main-color2);
+    /* Ubah warna saat di-hover */
+}
+
+/* Gaya untuk kontainer services */
+.services-container {
+    display: flex;
+    /* Menggunakan flexbox untuk tata letak */
+    justify-content: space-around;
+    /* Meratakan jarak antar service */
+    margin-top: 2rem;
+    /* Jarak atas */
+    flex-wrap: wrap;
+    /* Membuat layanan tetap responsif */
+}
+
+/* Gaya untuk setiap service */
+.service1 {
+    border-radius: 10px;
+    /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Bayangan untuk efek 3D */
+    padding: 2rem;
+    /* Padding dalam setiap service */
+    width: 30%;
+    /* Lebar setiap service */
+    margin: 1rem;
+    /* Margin antar service */
+}
+
+.service1:hover {
+    background-color: red;
+    transition: 2s;
+    cursor: pointer;
+}
+
+/* sama aja tapi versi box 2 */
+.service2 {
+    border-radius: 10px;
+    /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Bayangan untuk efek 3D */
+    padding: 2rem;
+    /* Padding dalam setiap service */
+    width: 30%;
+    /* Lebar setiap service */
+    margin: 1rem;
+    /* Margin antar service */
+}
+
+.service2:hover {
+    background-color: blue;
+    transition: 2s;
+    cursor: pointer;
+}
+
+/* sama aja tapi versi box 3 */
+.service3 {
+    border-radius: 10px;
+    /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Bayangan untuk efek 3D */
+    padding: 2rem;
+    /* Padding dalam setiap service */
+    width: 30%;
+    /* Lebar setiap service */
+    margin: 1rem;
+    /* Margin antar service */
+}
+
+.service3:hover {
+    background-color: yellow;
+    transition: 2s;
+    cursor: pointer;
+}
+
+/* Gaya untuk gambar dalam service */
+.service img {
+    width: 100%;
+    /* Lebar gambar penuh */
+    border-radius: 10px;
+    /* Sudut melengkung untuk gambar */
+}
+
+/* Gaya untuk judul service */
+.service h2 {
+    font-size: 2rem;
+    /* Ukuran font judul */
+    margin: 1rem 0;
+    /* Jarak atas dan bawah */
+}
+
+/* Gaya untuk paragraf dalam service */
+.service p {
+    font-size: 1.2rem;
+    /* Ukuran font paragraf */
+    margin: 0.5rem 0;
+    /* Jarak atas dan bawah */
+}
+
+/* Gaya untuk button */
+.btn {
+    background-color: var(--main-color);
+    /* Warna latar belakang button */
+    color: white;
+    /* Warna teks button */
+    padding: 0.5rem 1.5rem;
+    /* Padding dalam button */
+    border: none;
+    /* Menghilangkan border */
+    border-radius: 5px;
+    /* Sudut melengkung */
+    cursor: pointer;
+    /* Menunjukkan bahwa button dapat diklik */
+    transition: background-color 0.3s ease;
+    /* Transisi warna */
+}
+
+/* Efek hover untuk button */
+.btn:hover {
+    background-color: var(--main-color2);
+    /* Ubah warna saat di-hover */
+}
+
+/* Gaya untuk jam */
+.clock {
+    font-size: 1.5rem;
+    /* Ukuran font untuk jam */
+    margin-top: 2rem;
+    /* Jarak atas */
+}
+
+/* Pengaturan untuk section contact */
+.contact {
+    padding: 5rem 9%;
+    /* Padding untuk bagian atas dan bawah */
+    text-align: center;
+    /* Teks rata tengah */
+}
+
+/* Gaya untuk judul kontak */
+.contact-title {
+    font-size: 3rem;
+    /* Ukuran font judul */
+    margin-bottom: 2rem;
+    /* Jarak bawah */
+    position: relative;
+    /* Posisi relatif untuk efek */
+    display: inline-block;
+    /* Agar ukuran elemen sesuai dengan teks */
+    transition: color 0.3s ease;
+    /* Transisi warna */
+}
+
+/* Efek hover untuk judul kontak */
+.contact-title:hover {
+    color: var(--main-color2);
+    /* Ubah warna saat di-hover */
+}
+
+/* Gaya untuk kontainer kontak */
+.contact-container {
+    display: flex;
+    /* Menggunakan flexbox untuk tata letak */
+    justify-content: center;
+    /* Pusatkan kontainer */
+    margin-top: 2rem;
+    /* Jarak atas */
+}
+
+/* Gaya untuk informasi kontak */
+.contact-info {
+    max-width: 400px;
+    /* Lebar maksimum untuk informasi kontak */
+    margin-right: 2rem;
+    /* Jarak kanan */
+}
+
+/* Gaya untuk subjudul kontak */
+.contact-subtitle {
+    font-size: 2rem;
+    /* Ukuran font subjudul */
+    margin: 1rem 0;
+    /* Jarak atas dan bawah */
+}
+
+/* Gaya untuk deskripsi kontak */
+.contact-description {
+    font-size: 1.2rem;
+    /* Ukuran font deskripsi */
+    margin: 0.5rem 0;
+    /* Jarak atas dan bawah */
+}
+
+/* Gaya untuk form kontak */
+.contact-form {
+    display: flex;
+    /* Menggunakan flexbox untuk tata letak form */
+    flex-direction: column;
+    /* Mengatur elemen dalam kolom */
+    max-width: 400px;
+    /* Lebar maksimum form */
+    margin: 0 auto;
+    /* Pusatkan form */
+}
+
+/* Gaya untuk label dan input */
+.contact-form label {
+    margin: 0.5rem 0;
+    /* Jarak atas dan bawah */
+    font-size: 1rem;
+    /* Ukuran font */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.5rem;
+    /* Padding untuk elemen input */
+    margin-bottom: 1rem;
+    /* Jarak bawah */
+    border: 1px solid #ccc;
+    /* Border untuk input */
+    border-radius: 5px;
+    /* Sudut melengkung */
+    font-size: 1rem;
+    /* Ukuran font */
+}
+
+/* Gaya untuk tombol */
+.contact-form button {
+    padding: 0.75rem;
+    /* Padding untuk tombol */
+    background-color: #007bff;
+    /* Warna latar belakang tombol */
+    border: none;
+    /* Tanpa border */
+    border-radius: 5px;
+    /* Sudut melengkung */
+    cursor: pointer;
+    /* Tanda kursor saat hover */
+    font-size: 1rem;
+    /* Ukuran font tombol */
+}
+
+/* Efek hover untuk tombol */
+.contact-form button:hover {
+    background-color: #0056b3;
+    /* Ubah warna saat di-hover */
+}

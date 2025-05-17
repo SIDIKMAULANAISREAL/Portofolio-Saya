@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Mendefinisikan karakter encoding untuk dokumen HTML -->
+    <meta charset="UTF-8">
+    <!-- Mengatur viewport untuk responsivitas di berbagai ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Menghubungkan file CSS eksternal untuk penataan halaman -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Menentukan favicon atau ikon kecil yang muncul di tab browser -->
+    <!-- <link rel="icon" href="images/logo.jpg" type="image/jpeg" sizes="16x16"> -->
+    <!-- Menentukan jenis dan ukuran ikon -->
+    <!-- Judul halaman yang tampil di tab browser -->
+    <title>Portofolio Me</title>
+</head>
+
+<body>
+    <!-- Bagian header dari halaman, biasanya berisi logo dan navigasi -->
+    <header class="header">
+        <!-- Logo dengan link menuju ke bagian home -->
+        <a href="#home" class="logo">Portofoli
+            <span>Me</span></a>
+
+        <!-- Menu navigasi dengan beberapa link -->
+        <nav class="navbar">
+            <!-- Link yang mengaktifkan fungsi reRender untuk me-refresh halaman -->
+            <a onclick="reRender()" id="home">Home</a>
+            <!-- Link untuk menuju ke bagian About -->
+            <a href="#about">About</a>
+            <!-- Link untuk menuju ke bagian Services -->
+            <a href="#services">Services</a>
+            <!-- Link untuk menuju ke bagian Contact -->
+            <a href="#contact">Contact</a>
+            <!-- Tombol mode yang mengaktifkan dark mode -->
+            <a onclick="darkMode()" id="mode">Mode</a>
+
+            <!-- Tombol pencarian yang memicu fungsi untuk menampilkan input pencarian -->
+            <a href="javascript:void(0);" id="search-btn" onclick="toggleSearch()">Cari</a>
+            <!-- Input pencarian yang tersembunyi secara default -->
+            <div class="search-form" id="search-form">
+                <input type="search" id="search-box" placeholder="Search sekarang...">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bagian utama home -->
+    <section class="home" id="home">
+        <!-- Gambar logo di dalam div -->
+        <div class="home-img">
+            <img src="images/sidikpersib.jpg" alt="logo saya">
+        </div>
+
+        <!-- Konten di dalam home -->
+        <div class="home-content">
+            <!-- Judul dengan elemen span untuk menyoroti teks tertentu -->
+            <h1>this is <span>Website</span></h1>
+            <!-- Animasi teks -->
+            <h3 class="text-animation">
+                <span></span>
+            </h3>
+            <p>.</p>
+            <!-- Tombol untuk interaksi pengguna -->
+            <button href="#" class="btn" id="klik" type="button" onclick="MyKlik()">Klik Me</button>
+
+            <!-- Pesan peringatan fitur light mode -->
+            <p class="info" id="info">💥 JATAH FITUR DARK MODE ANDA SUDAH HABIS SEGERA BELI DARK MODE ANDA MEMAKAI
+                COIN💥</p>
+        </div>
+    </section>
+
+    <!-- Bagian About -->
+    <section class="about" id="about">
+        <!-- Judul bagian About -->
+        <h1 class="about-title"><b>Tentang Kami</b></h1>
+        <div class="about-container">
+            <!-- Gambar yang menggambarkan media sosial -->
+            <img src="images/mediasocial.jpg" alt="About gambar media sosial" class="about-image">
+        </div>
+        <div class="about-content">
+            <!-- Subjudul tentang visi perusahaan -->
+            <h2>Menjadi Bagian dari Perubahan Digital!</h2>
+            <!-- Paragraf yang menjelaskan visi perusahaan -->
+            <p>Di sini, kami berinovasi dengan setiap proyek, menciptakan desain media sosial yang tidak hanya menarik,
+                tetapi juga menginspirasi. Kami memahami pentingnya kehadiran online yang kuat dan berusaha untuk
+                memberikan solusi yang membantu Anda menonjol di tengah keramaian. Mari berkolaborasi dan wujudkan visi
+                Anda bersama kami!</p>
+            <div class="about-stats">
+                <!-- Statistik proyek yang telah diselesaikan dan kepuasan pelanggan -->
+                <div class="stat">
+                    <h2>1+</h2>
+                    <p><b>Proyek yang Selesai</b></p>
+                </div>
+                <div class="stat">
+                    <h2>1+</h2>
+                    <p><b>Customer Puas</b></p>
+                </div>
+                <div class="stat">
+                    <h2>0+</h2>
+                    <p><b>Customer Tidak Puas</b></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Services -->
+    <section class="services" id="services">
+        <!-- Judul bagian Services -->
+        <h1 class="services-title">Layanan Kreatif Kami</h1>
+        <div class="services-container">
+            <!-- Service 1 -->
+            <div class="service1">
+                <img src="images/html.jpg" alt="Layanan 1" class="service-image">
+                <h2 class="service-title">Skils HTML Me</h2>
+                <p class="service_description">
+                    Saya memahami struktur dasar HTML,termasuk penggunaan elemen seperti div, p, h1-h6, img, button,
+                    serta atribut id, name, for, dan type.Saya juga mampu menghubungkan HTML dengan file membangun
+                    Halaman Web statis yang terstruktur dan fungsional</p>
+                <button class="btn" type="button" onclick="APAAJA('Template No 1')">PAKAI TEMPLATE 1</button>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service2">
+                <img src="images/css.webp" alt="Layanan 2" class="service-image">
+                <h2 class="service-title">Skils CSS Me</h2>
+                <p class="service-description">
+                    Deskripsi: Template ini dirancang untuk memenuhi kebutuhan di era digital yang terus berkembang.
+                    Dengan fokus pada responsivitas, template ini memastikan bahwa situs web Anda terlihat dan berfungsi
+                    dengan baik di semua perangkat, mulai dari desktop hingga smartphone. Dikenal karena antarmuka
+                    pengguna yang intuitif dan desain yang menarik, template ini memungkinkan bisnis Anda untuk tampil
+                    profesional dan modern.
+                </p>
+                <button class="btn" type="button" onclick="APAAJA('Template No 2')">PAKAI TEMPLATE 2</button>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service3">
+                <img src="images/js.jpg" alt="Layanan 3" class="service-image">
+                <h2 class="service-title">Skils JAVASCRIPT Me</h2>
+                <p class="service-description">
+                    Deskripsi: Template ini dirancang untuk membantu bisnis dalam merancang dan melaksanakan strategi
+                    media sosial yang efektif. Dengan pendekatan yang terintegrasi, template ini menyediakan alat dan
+                    panduan yang diperlukan untuk meningkatkan kehadiran online Anda, menarik lebih banyak pengikut, dan
+                    berinteraksi dengan audiens secara lebih mendalam. Dengan fokus pada konten yang menarik dan
+                    analisis data, Anda dapat memaksimalkan potensi media sosial Anda.
+                </p>
+                <button class="btn" type="button" onclick="APAAJA('Template No 3')">PAKAI TEMPLATE 3</button>
+            </div>
+        </div>
+        <!-- Tempat untuk menampilkan jam -->
+        <div class="clock" id="clock"></div>
+    </section>
+
+    <!-- Bagian Contact -->
+    <section class="contact" id="contact">
+        <h1 class="contact-title">Hubungi Kami</h1>
+        <div class="contact-container">
+            <div class="contact-info">
+                <!-- Informasi kontak bisa ditambahkan di sini -->
+            </div>
+            <!-- Form kontak untuk mengumpulkan informasi dari pengguna -->
+            <form class="contact-form" onsubmit="return handleSubmit(event)">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required> <!-- Input untuk nama pengguna -->
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required> <!-- Input untuk email pengguna -->
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" required></textarea> <!-- Input untuk pesan pengguna -->
+
+                <button type="submit" class="btn">Kirim Pesan</button> <!-- Tombol untuk mengirim pesan -->
+            </form>
+        </div>
+    </section>
+
+    <!-- Script JavaScript untuk interaksi pada halaman -->
+    <script src="DarkMode.js"></script> <!-- Script untuk mengatur mode gelap -->
+    <script src="Search.js"></script> <!-- Script untuk fungsi pencarian -->
+    <script src="yes or no.js"></script> <!-- Script untuk fungsi terkait pilihan -->
+    <script src="JAMBIASA.js"></script> <!-- Script untuk menampilkan jam -->
+    <script src="nama,email,pesan.js"></script>
+    <!-- Script untuk menampilkan nama email dan pesan ke dalam sebuah consol -->
+
+</body>
+
+</html>
